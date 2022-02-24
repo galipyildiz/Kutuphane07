@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kutuphane07.DATA", "Kutupha
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E7EA469B-F11E-419D-9CCC-7229ECC10264}"
 	ProjectSection(SolutionItems) = preProject
-		Kutuphane07.UI\README.md = Kutuphane07.UI\README.md
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global
