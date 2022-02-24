@@ -31,6 +31,8 @@
     - Register sayfasında parola eşleşme kontrolü
     - Aynı kullanıcı adına sahip kişi var mı kontrolü
     - Register ve login işlemleri methodlar kullanılarak
+    - Login başarılıysa KutuphaneForm acilsin. 
+    - LoginForm açılır ve kapanırken Kullanıcıyoneticisini serialize ve deserialize ediniz.
 - [ ] Sınıfların tasarlanması
 - [ ] Sınıfların tasarlanması
 - [ ] Sınıfların tasarlanması
