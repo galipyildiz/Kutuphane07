@@ -35,9 +35,11 @@
     - LoginForm açılır ve kapanırken Kullanıcıyoneticisini serialize ve deserialize ediniz.
 - [ ] KutuphaneForm
     - KutuphaneForm açılır ve kapanırken kutuphaneyoneticisi serialize ve deserialize edilir.
-    - 
-- [ ] Sınıfların tasarlanması
-- [ ] Sınıfların tasarlanması
+    - Kutuphaneform'da menustripdeki butonlara tıklandığında ilgili formların açılması.
+    - Çıkış yap özelliği 
+- [ ] HesabımForm
+    - HesabımSayfasında giriş yapan kullanıcı bilgileri gösterilir.
+- [ ] BagisYap Form
  
 #### Örnek tasarım
 - BagisYap Form

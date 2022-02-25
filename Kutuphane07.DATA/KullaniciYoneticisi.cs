@@ -10,18 +10,19 @@ namespace Kutuphane07.DATA
     {
         public KullaniciYoneticisi()
         {
-            Kullanicilar = new List<Kullanici>();
+            Kullanicilar = new List<Kullanici>()
+            {
+                new Kullanici(){ AdSoyad = "Galip yıldız", KullaniciAdi = "galip", Parola = "123" }
+            };
         }
         public List<Kullanici> Kullanicilar { get; set; }
         public bool KullaniciVarMi(string kullaniciAdi)
         {
-            //TODO kullaniciAdi varsa true yoksa false dönmeli.
-            return true;
+            return Kullanicilar.Any(x=>x.KullaniciAdi == kullaniciAdi);
         }
         public Kullanici GirisYap(string kullaniciAdi, string parola)
         {
-            //TODO kullanıcı listesindeki kullanıcılardan kullaniciAdi ve parolası eşeleşen kullanıcıyı bularak onu return edicez.
-            return new Kullanici();
+            return Kullanicilar.FirstOrDefault(x=>x.KullaniciAdi == kullaniciAdi && x.Parola == parola);
         }
         public bool KayitOl(string adSoyad, string kullaniciAdi, string parola, string parolaTekrar)
         {

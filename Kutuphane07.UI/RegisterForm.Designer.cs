@@ -38,14 +38,16 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.lblKullaniciAdi = new System.Windows.Forms.Label();
+            this.lblParola = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Kutuphane07.UI.Properties.Resources.register;
-            this.pictureBox1.Location = new System.Drawing.Point(114, 12);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(111, 10);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(161, 176);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -54,12 +56,14 @@
             // 
             // btnKayitOl
             // 
-            this.btnKayitOl.Location = new System.Drawing.Point(277, 325);
+            this.btnKayitOl.Enabled = false;
+            this.btnKayitOl.Location = new System.Drawing.Point(277, 380);
             this.btnKayitOl.Name = "btnKayitOl";
             this.btnKayitOl.Size = new System.Drawing.Size(101, 33);
             this.btnKayitOl.TabIndex = 2;
             this.btnKayitOl.Text = "Kayıt Ol";
             this.btnKayitOl.UseSelectable = true;
+            this.btnKayitOl.Click += new System.EventHandler(this.btnKayitOl_Click);
             // 
             // txtAdSoyad
             // 
@@ -90,9 +94,11 @@
             this.txtAdSoyad.UseSelectable = true;
             this.txtAdSoyad.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtAdSoyad.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtAdSoyad.TextChanged += new System.EventHandler(this.txtAdSoyad_TextChanged);
             // 
             // txtKullaniciAdi
             // 
+            this.txtKullaniciAdi.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -105,6 +111,7 @@
             this.txtKullaniciAdi.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtKullaniciAdi.CustomButton.UseSelectable = true;
             this.txtKullaniciAdi.CustomButton.Visible = false;
+            this.txtKullaniciAdi.ForeColor = System.Drawing.Color.Black;
             this.txtKullaniciAdi.Lines = new string[0];
             this.txtKullaniciAdi.Location = new System.Drawing.Point(125, 238);
             this.txtKullaniciAdi.MaxLength = 32767;
@@ -120,6 +127,7 @@
             this.txtKullaniciAdi.UseSelectable = true;
             this.txtKullaniciAdi.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtKullaniciAdi.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtKullaniciAdi.TextChanged += new System.EventHandler(this.txtKullaniciAdi_TextChanged);
             // 
             // txtParola
             // 
@@ -136,7 +144,7 @@
             this.txtParola.CustomButton.UseSelectable = true;
             this.txtParola.CustomButton.Visible = false;
             this.txtParola.Lines = new string[0];
-            this.txtParola.Location = new System.Drawing.Point(125, 267);
+            this.txtParola.Location = new System.Drawing.Point(125, 291);
             this.txtParola.MaxLength = 32767;
             this.txtParola.Name = "txtParola";
             this.txtParola.PasswordChar = '\0';
@@ -150,6 +158,7 @@
             this.txtParola.UseSelectable = true;
             this.txtParola.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtParola.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtParola.TextChanged += new System.EventHandler(this.txtParola_TextChanged);
             // 
             // txtParolaTekrar
             // 
@@ -166,7 +175,7 @@
             this.txtParolaTekrar.CustomButton.UseSelectable = true;
             this.txtParolaTekrar.CustomButton.Visible = false;
             this.txtParolaTekrar.Lines = new string[0];
-            this.txtParolaTekrar.Location = new System.Drawing.Point(125, 296);
+            this.txtParolaTekrar.Location = new System.Drawing.Point(125, 320);
             this.txtParolaTekrar.MaxLength = 32767;
             this.txtParolaTekrar.Name = "txtParolaTekrar";
             this.txtParolaTekrar.PasswordChar = '\0';
@@ -180,6 +189,7 @@
             this.txtParolaTekrar.UseSelectable = true;
             this.txtParolaTekrar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtParolaTekrar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtParolaTekrar.TextChanged += new System.EventHandler(this.txtParola_TextChanged);
             // 
             // metroLabel1
             // 
@@ -202,7 +212,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(16, 267);
+            this.metroLabel3.Location = new System.Drawing.Point(16, 291);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(49, 19);
             this.metroLabel3.TabIndex = 4;
@@ -211,17 +221,39 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(16, 296);
+            this.metroLabel4.Location = new System.Drawing.Point(16, 320);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(89, 19);
             this.metroLabel4.TabIndex = 4;
             this.metroLabel4.Text = "Parola Tekrar:";
             // 
+            // lblKullaniciAdi
+            // 
+            this.lblKullaniciAdi.AutoSize = true;
+            this.lblKullaniciAdi.ForeColor = System.Drawing.Color.Red;
+            this.lblKullaniciAdi.Location = new System.Drawing.Point(121, 264);
+            this.lblKullaniciAdi.Name = "lblKullaniciAdi";
+            this.lblKullaniciAdi.Size = new System.Drawing.Size(197, 24);
+            this.lblKullaniciAdi.TabIndex = 5;
+            this.lblKullaniciAdi.Text = "Kullanici Adi Geçersiz!";
+            // 
+            // lblParola
+            // 
+            this.lblParola.AutoSize = true;
+            this.lblParola.ForeColor = System.Drawing.Color.Red;
+            this.lblParola.Location = new System.Drawing.Point(121, 346);
+            this.lblParola.Name = "lblParola";
+            this.lblParola.Size = new System.Drawing.Size(147, 24);
+            this.lblParola.TabIndex = 6;
+            this.lblParola.Text = "Parola Geçersiz!";
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 368);
+            this.ClientSize = new System.Drawing.Size(393, 453);
+            this.Controls.Add(this.lblParola);
+            this.Controls.Add(this.lblKullaniciAdi);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
@@ -233,7 +265,7 @@
             this.Controls.Add(this.btnKayitOl);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "RegisterForm";
             this.Padding = new System.Windows.Forms.Padding(37, 111, 37, 37);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -254,5 +286,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel4;
+        private System.Windows.Forms.Label lblKullaniciAdi;
+        private System.Windows.Forms.Label lblParola;
     }
 }

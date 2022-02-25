@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KutuphaneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KutuphaneForm.Designer.cs">
+      <DependentUpon>KutuphaneForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="KutuphaneForm.resx">
+      <DependentUpon>KutuphaneForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +113,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\register.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kutuphane07.DATA\Kutuphane07.DATA.csproj">
+      <Project>{d824b969-2f4d-4689-9d77-968ee9de2397}</Project>
+      <Name>Kutuphane07.DATA</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
