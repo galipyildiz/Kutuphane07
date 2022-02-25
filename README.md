@@ -33,7 +33,21 @@
     - Register ve login işlemleri methodlar kullanılarak
     - Login başarılıysa KutuphaneForm acilsin. 
     - LoginForm açılır ve kapanırken Kullanıcıyoneticisini serialize ve deserialize ediniz.
-- [ ] Sınıfların tasarlanması
+- [ ] KutuphaneForm
+    - KutuphaneForm açılır ve kapanırken kutuphaneyoneticisi serialize ve deserialize edilir.
+    - 
 - [ ] Sınıfların tasarlanması
 - [ ] Sınıfların tasarlanması
  
+#### Örnek tasarım
+- BagisYap Form
+
+![](./assets/bagisForm.png)
+
+- Kutuphane Form
+
+![](./assets/kutuphaneForm.png)
+
+- Hesabim Form
+
+![](./assets/hesabimForm.png)

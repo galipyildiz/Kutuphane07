@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,22 @@ using System.Windows.Forms;
 
 namespace Kutuphane07.UI
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : MetroForm
     {
         public LoginForm()
         {
             InitializeComponent();
+        }
+
+        private void btnGirisYap_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lnkLblKayitOl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.ShowDialog();
         }
     }
 }
