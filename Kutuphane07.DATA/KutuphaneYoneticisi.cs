@@ -8,6 +8,7 @@ namespace Kutuphane07.DATA
 {
     public class KutuphaneYoneticisi
     {
+        public static readonly string path = Environment.CurrentDirectory.Replace("Kutuphane07.UI\\bin\\Debug", "") + "kutuphaneveri.json";
         public KutuphaneYoneticisi()
         {
             Kitaplar = new List<Kitap>();

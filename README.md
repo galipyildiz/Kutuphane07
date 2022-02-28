@@ -26,7 +26,7 @@
         - KitapBagisYap methodu
         - KitapImhaEt methodu
         - KitapOduncAl methodu parametre kullanıcı ve kitap
-- [ ] Register ve Login sayfalarının tasarlanması
+- [X] Register ve Login sayfalarının tasarlanması
     - Görsel tasarımın yapılması.
     - Register sayfasında parola eşleşme kontrolü
     - Aynı kullanıcı adına sahip kişi var mı kontrolü

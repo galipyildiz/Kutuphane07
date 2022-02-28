@@ -1,10 +1,14 @@
 ﻿using Kutuphane07.DATA;
+using MetroFramework;
 using MetroFramework.Forms;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +22,9 @@ namespace Kutuphane07.UI
         public LoginForm()
         {
             InitializeComponent();
+            //Debug.WriteLine("**********");
+            //Debug.WriteLine(KullaniciYoneticisi.path);
+            //Debug.WriteLine("**********");
         }
 
         private void btnGirisYap_Click(object sender, EventArgs e)
@@ -32,12 +39,12 @@ namespace Kutuphane07.UI
                 }
                 else
                 {
-                    MessageBox.Show("Kullanıcı adı yada parola hatalı!");
+                    MetroMessageBox.Show(this,"Kullanıcı adı yada parola hatalı!","HATA",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Lütfen kullanıcı adı ve şifrenizi giriniz");
+                MetroMessageBox.Show(this, "Lütfen kullanıcı adı ve şifrenizi giriniz", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -50,12 +57,22 @@ namespace Kutuphane07.UI
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             //Json kaydetme
+            string json = JsonConvert.SerializeObject(kullaniciYoneticisi);
+            File.WriteAllText(KullaniciYoneticisi.path, json);
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            kullaniciYoneticisi = new KullaniciYoneticisi();
             //Json okuma
+            try
+            {
+                string json = File.ReadAllText(KullaniciYoneticisi.path);
+                kullaniciYoneticisi = JsonConvert.DeserializeObject<KullaniciYoneticisi>(json);
+            }
+            catch (Exception)
+            {
+                kullaniciYoneticisi = new KullaniciYoneticisi();
+            }
         }
     }
 }

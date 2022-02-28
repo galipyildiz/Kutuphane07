@@ -1,4 +1,5 @@
 ﻿using Kutuphane07.DATA;
+using MetroFramework;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -110,7 +111,16 @@ namespace Kutuphane07.UI
 
         private void btnKayitOl_Click(object sender, EventArgs e)
         {
-
+            bool basariliMi = kullaniciYoneticisi.KayitOl(txtAdSoyad.Text, txtKullaniciAdi.Text, txtParola.Text, txtParolaTekrar.Text);
+            if (basariliMi)
+            {
+                MetroMessageBox.Show(this, "Başarıyla kayıt oldunuz!", "BAŞARI", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "Kayıt işlemi başarısız. Lütfen tekrar deneyiniz.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

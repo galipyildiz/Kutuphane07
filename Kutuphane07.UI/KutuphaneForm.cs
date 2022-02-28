@@ -21,11 +21,17 @@ namespace Kutuphane07.UI
         {
             InitializeComponent();
             this.girisYapan = girisYapan;
+            TurleriYukle();
+        }
+
+        private void TurleriYukle()
+        {
+            cmbTurler.DataSource = Enum.GetValues(typeof(KitapTurEnum));
         }
 
         private void KutuphaneForm_Load(object sender, EventArgs e)
         {
-            MetroMessageBox.Show(this, girisYapan.KullaniciAdi,"Giriş Yapan",MessageBoxButtons.OK,MessageBoxIcon.Question);
+            //MetroMessageBox.Show(this, girisYapan.KullaniciAdi,"Giriş Yapan",MessageBoxButtons.OK,MessageBoxIcon.Question);
         }
 
         private void KutuphaneForm_MouseClick(object sender, MouseEventArgs e)
@@ -34,6 +40,22 @@ namespace Kutuphane07.UI
             {
                 contextMenuStrip1.Show(this,new Point(e.X, e.Y));
             }
+        }
+
+        private void tsmiCikisYap_Click(object sender, EventArgs e)
+        {
+            //TODO kutuphaneyoneticisini kaydet
+            Close();
+        }
+
+        private void tsmiBagisYap_Click(object sender, EventArgs e)
+        {
+            //TODO bagisyap form aç
+        }
+
+        private void tsmiHesabim_Click(object sender, EventArgs e)
+        {
+            //TODO hesabim form aç
         }
     }
 }

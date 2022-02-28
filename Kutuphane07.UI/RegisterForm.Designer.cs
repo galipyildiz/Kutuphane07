@@ -266,6 +266,9 @@
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(393, 453);
+            this.MinimumSize = new System.Drawing.Size(393, 453);
             this.Name = "RegisterForm";
             this.Padding = new System.Windows.Forms.Padding(37, 111, 37, 37);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
