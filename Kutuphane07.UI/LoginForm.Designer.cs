@@ -91,6 +91,7 @@ namespace Kutuphane07.UI
             // 
             this.txtParola.Location = new System.Drawing.Point(136, 237);
             this.txtParola.Name = "txtParola";
+            this.txtParola.PasswordChar = '*';
             this.txtParola.Size = new System.Drawing.Size(182, 29);
             this.txtParola.TabIndex = 3;
             // 

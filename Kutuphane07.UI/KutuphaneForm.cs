@@ -16,29 +16,54 @@ namespace Kutuphane07.UI
     public partial class KutuphaneForm : MetroForm
     {
         private readonly Kullanici girisYapan;
-
-        public KutuphaneForm(Kullanici girisYapan) 
+        KutuphaneYoneticisi kutuphaneYoneticisi;
+        public KutuphaneForm(Kullanici girisYapan)
         {
             InitializeComponent();
             this.girisYapan = girisYapan;
-            TurleriYukle();
         }
 
         private void TurleriYukle()
         {
-            cmbTurler.DataSource = Enum.GetValues(typeof(KitapTurEnum));
+            cmbTurler.Items.Add("Hepsi");
+            cmbTurler.Items.AddRange(Enum.GetValues(typeof(KitapTurEnum)).Cast<object>().ToArray());
+            cmbTurler.SelectedIndex = 0;
         }
 
         private void KutuphaneForm_Load(object sender, EventArgs e)
         {
-            //MetroMessageBox.Show(this, girisYapan.KullaniciAdi,"Giriş Yapan",MessageBoxButtons.OK,MessageBoxIcon.Question);
+            //TODO json oku
+            kutuphaneYoneticisi = new KutuphaneYoneticisi();
+            Listele();
+            TurleriYukle();
         }
 
-        private void KutuphaneForm_MouseClick(object sender, MouseEventArgs e)
+        private void Listele()
+        {
+            dgvKitaplar.DataSource = null;
+            dgvKitaplar.DataSource = kutuphaneYoneticisi.Kitaplar
+                .Where(x => x.OduncAlinmaTarihi == null)
+                .ToList();
+            dgvKitaplar.Columns[0].Visible = false;//Id kolonunu gizledik.
+            dgvKitaplar.Columns[1].HeaderText = "Kitap Adı";
+            dgvKitaplar.Columns[2].HeaderText = "Basım Tarihi";
+            dgvKitaplar.Columns[3].HeaderText = "Kitap Türü";
+            dgvKitaplar.Columns[4].HeaderText = "Yazar Ad";
+            dgvKitaplar.Columns[5].HeaderText = "Sayfa Sayısı";
+            dgvKitaplar.Columns[6].HeaderText = "Açıklama";
+            dgvKitaplar.Columns[7].Visible = false;//Oduncalinmatarihini gizledik.
+        }
+
+        private void dgvKitaplar_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
-                contextMenuStrip1.Show(this,new Point(e.X, e.Y));
+                int position = dgvKitaplar.HitTest(e.X, e.Y).RowIndex;
+                if (position >= 0)
+                {
+                    contextMenuStrip1.Show(dgvKitaplar, new Point(e.X, e.Y));
+                    dgvKitaplar.Rows[position].Selected = true;//sağ click yaptığım satırı seç
+                }
             }
         }
 
@@ -55,7 +80,23 @@ namespace Kutuphane07.UI
 
         private void tsmiHesabim_Click(object sender, EventArgs e)
         {
-            //TODO hesabim form aç
+            HesabimForm hesabimForm = new HesabimForm(girisYapan);
+            hesabimForm.ShowDialog();
+        }
+
+        private void tsmiKitapOduncAl_Click(object sender, EventArgs e)
+        {
+            //TODO kitap odunc alma islemleri
+        }
+
+        private void tsmiKitapImhaEt_Click(object sender, EventArgs e)
+        {
+            //TODO kitap imha etme işlemleri
+        }
+
+        private void KutuphaneForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //TODO json kaydet
         }
     }
 }

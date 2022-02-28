@@ -36,7 +36,7 @@
             this.tsmiHesabim = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiBagisYap = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCikisYap = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvKitaplar = new System.Windows.Forms.DataGridView();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -44,7 +44,7 @@
             this.cmbTurler = new MetroFramework.Controls.MetroComboBox();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKitaplar)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -58,14 +58,16 @@
             // tsmiKitapOduncAl
             // 
             this.tsmiKitapOduncAl.Name = "tsmiKitapOduncAl";
-            this.tsmiKitapOduncAl.Size = new System.Drawing.Size(154, 22);
+            this.tsmiKitapOduncAl.Size = new System.Drawing.Size(180, 22);
             this.tsmiKitapOduncAl.Text = "Kitap Ödünç Al";
+            this.tsmiKitapOduncAl.Click += new System.EventHandler(this.tsmiKitapOduncAl_Click);
             // 
             // tsmiKitapImhaEt
             // 
             this.tsmiKitapImhaEt.Name = "tsmiKitapImhaEt";
-            this.tsmiKitapImhaEt.Size = new System.Drawing.Size(154, 22);
+            this.tsmiKitapImhaEt.Size = new System.Drawing.Size(180, 22);
             this.tsmiKitapImhaEt.Text = "Kitap İmha Et";
+            this.tsmiKitapImhaEt.Click += new System.EventHandler(this.tsmiKitapImhaEt_Click);
             // 
             // menuStrip1
             // 
@@ -100,16 +102,23 @@
             this.tsmiCikisYap.Text = "Çıkış Yap";
             this.tsmiCikisYap.Click += new System.EventHandler(this.tsmiCikisYap_Click);
             // 
-            // dataGridView1
+            // dgvKitaplar
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvKitaplar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 126);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(760, 301);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvKitaplar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvKitaplar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvKitaplar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKitaplar.Location = new System.Drawing.Point(23, 129);
+            this.dgvKitaplar.MultiSelect = false;
+            this.dgvKitaplar.Name = "dgvKitaplar";
+            this.dgvKitaplar.ReadOnly = true;
+            this.dgvKitaplar.RowHeadersVisible = false;
+            this.dgvKitaplar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvKitaplar.Size = new System.Drawing.Size(754, 301);
+            this.dgvKitaplar.TabIndex = 2;
+            this.dgvKitaplar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvKitaplar_MouseClick);
             // 
             // metroLabel1
             // 
@@ -192,17 +201,17 @@
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvKitaplar);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "KutuphaneForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.KutuphaneForm_FormClosing);
             this.Load += new System.EventHandler(this.KutuphaneForm_Load);
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.KutuphaneForm_MouseClick);
             this.contextMenuStrip1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKitaplar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,7 +226,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiHesabim;
         private System.Windows.Forms.ToolStripMenuItem tsmiBagisYap;
         private System.Windows.Forms.ToolStripMenuItem tsmiCikisYap;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvKitaplar;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;

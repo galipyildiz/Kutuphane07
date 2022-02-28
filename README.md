@@ -3,11 +3,12 @@
 	- Kitap
         - Id Guid (contructor'da otomaik değer atansın.)
         - Ad string
-        - BasimTarihi DateTimee
+        - BasimTarihi DateTime
         - KitapTurEnum KitapTuru
         - YazarAd string
         - SayfaSayisi int
         - Aciklama string
+        - DateTime? OduncAlinmaTarihi
     - KitapTurEnum
         - Egitim,Psikoloji,Korku,Biyografi,....
     - Kullanıcı

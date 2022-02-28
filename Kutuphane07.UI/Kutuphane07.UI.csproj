@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HesabimForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HesabimForm.Designer.cs">
+      <DependentUpon>HesabimForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="KutuphaneForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="HesabimForm.resx">
+      <DependentUpon>HesabimForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KutuphaneForm.resx">
       <DependentUpon>KutuphaneForm.cs</DependentUpon>
     </EmbeddedResource>
