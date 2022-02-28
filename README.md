@@ -46,7 +46,8 @@
     - BagisYap fromda ilgili kitap bilgileri alınarak bir kitap kutuphanedeki kitaplara eklenir.
 - [ ] Çıkış Yap  Butonu
     - Kutuphane formu kapatarak loginforma geri döner ve başka bir kullanıcı ile giriş yapma imkanı sağlar.
- 
+- [ ] Ekstra Görev:
+    - Kullanıcının ödünç aldığı kitabın teslim süresi geçtiğinde nasıl bir sistem tasaralayabiliriz?
 #### Örnek tasarım
 - BagisYap Form
 
