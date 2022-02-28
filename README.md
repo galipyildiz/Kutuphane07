@@ -37,9 +37,14 @@
     - KutuphaneForm açılır ve kapanırken kutuphaneyoneticisi serialize ve deserialize edilir.
     - Kutuphaneform'da menustripdeki butonlara tıklandığında ilgili formların açılması.
     - Çıkış yap özelliği 
+    - Context menu strip kullanılarak kitap imha et ve kitap ödünç al özelliklerinin eklenmesi.
+    - txt arama ve combobox turlerdeki seçim ve text değiştiğinde datagridviewde ilgili kitapların listelenmesi.
 - [ ] HesabımForm
     - HesabımSayfasında giriş yapan kullanıcı bilgileri gösterilir.
 - [ ] BagisYap Form
+    - BagisYap fromda ilgili kitap bilgileri alınarak bir kitap kutuphanedeki kitaplara eklenir.
+- [ ] Çıkış Yap  Butonu
+    - Kutuphane formu kapatarak loginforma geri döner ve başka bir kullanıcı ile giriş yapma imkanı sağlar.
  
 #### Örnek tasarım
 - BagisYap Form
