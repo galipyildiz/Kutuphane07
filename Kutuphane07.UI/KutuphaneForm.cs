@@ -37,13 +37,13 @@ namespace Kutuphane07.UI
             try
             {
                 VerileriOku();
-                Listele();
             }
             catch (Exception)
             {
                 kutuphaneYoneticisi = new KutuphaneYoneticisi();
             }
             TurleriYukle();
+            Listele();
         }
 
         private void VerileriOku()
@@ -60,8 +60,36 @@ namespace Kutuphane07.UI
         private void Listele()
         {
             dgvKitaplar.DataSource = null;
-            dgvKitaplar.DataSource = kutuphaneYoneticisi.Kitaplar
-                .ToList();
+            if (!string.IsNullOrEmpty(txtArama.Text) && cmbTurler.SelectedIndex != 0)
+            {
+                //iki kriter geçerli
+                dgvKitaplar.DataSource = kutuphaneYoneticisi.Kitaplar
+                    .Where(x => x.Ad
+                    .ToLower()
+                    .Contains(txtArama.Text.ToLower())
+                    &&
+                    x.KitapTur == (KitapTurEnum)cmbTurler.SelectedItem)
+                    .ToList();
+            }
+            else if (!string.IsNullOrEmpty(txtArama.Text) && cmbTurler.SelectedIndex == 0)
+            {
+                //hepsi içerisinde arama geçerli
+                dgvKitaplar.DataSource = kutuphaneYoneticisi.Kitaplar
+                    .Where(x => x.Ad
+                    .ToLower()
+                    .Contains(txtArama.Text.ToLower()))
+                    .ToList();
+            }
+            else if (cmbTurler.SelectedIndex != 0)
+            {
+                dgvKitaplar.DataSource = kutuphaneYoneticisi.Kitaplar
+                    .Where(x => x.KitapTur == (KitapTurEnum)cmbTurler.SelectedItem)
+                    .ToList();
+            }
+            else
+            {
+                dgvKitaplar.DataSource = kutuphaneYoneticisi.Kitaplar.ToList();
+            }
             dgvKitaplar.Columns[0].Visible = false;//Id kolonunu gizledik.
             dgvKitaplar.Columns[1].HeaderText = "Kitap Adı";
             dgvKitaplar.Columns[2].HeaderText = "Basım Tarihi";
@@ -119,7 +147,7 @@ namespace Kutuphane07.UI
 
         private void tsmiHesabim_Click(object sender, EventArgs e)
         {
-            HesabimForm hesabimForm = new HesabimForm(girisYapan,kutuphaneYoneticisi);
+            HesabimForm hesabimForm = new HesabimForm(girisYapan, kutuphaneYoneticisi);
             hesabimForm.ShowDialog();
             Listele();
         }
@@ -132,7 +160,7 @@ namespace Kutuphane07.UI
                 return;
             }
             Guid kitapId = ((Kitap)dgvKitaplar.SelectedRows[0].DataBoundItem).Id;
-            kutuphaneYoneticisi.KitapOduncAl(girisYapan,kitapId);
+            kutuphaneYoneticisi.KitapOduncAl(girisYapan, kitapId);
             Listele();
         }
 
@@ -140,6 +168,16 @@ namespace Kutuphane07.UI
         private void KutuphaneForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             VerileriKaydet();
+        }
+
+        private void cmbTurler_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Listele();
+        }
+
+        private void txtArama_TextChanged(object sender, EventArgs e)
+        {
+            Listele();
         }
     }
 }

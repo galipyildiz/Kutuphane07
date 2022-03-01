@@ -58,14 +58,14 @@
             // tsmiKitapOduncAl
             // 
             this.tsmiKitapOduncAl.Name = "tsmiKitapOduncAl";
-            this.tsmiKitapOduncAl.Size = new System.Drawing.Size(180, 22);
+            this.tsmiKitapOduncAl.Size = new System.Drawing.Size(154, 22);
             this.tsmiKitapOduncAl.Text = "Kitap Ödünç Al";
             this.tsmiKitapOduncAl.Click += new System.EventHandler(this.tsmiKitapOduncAl_Click);
             // 
             // tsmiKitapImhaEt
             // 
             this.tsmiKitapImhaEt.Name = "tsmiKitapImhaEt";
-            this.tsmiKitapImhaEt.Size = new System.Drawing.Size(180, 22);
+            this.tsmiKitapImhaEt.Size = new System.Drawing.Size(154, 22);
             this.tsmiKitapImhaEt.Text = "Kitap İmha Et";
             this.tsmiKitapImhaEt.Click += new System.EventHandler(this.tsmiKitapImhaEt_Click);
             // 
@@ -179,6 +179,7 @@
             this.txtArama.UseSelectable = true;
             this.txtArama.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtArama.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtArama.TextChanged += new System.EventHandler(this.txtArama_TextChanged);
             // 
             // cmbTurler
             // 
@@ -190,6 +191,7 @@
             this.cmbTurler.Size = new System.Drawing.Size(121, 29);
             this.cmbTurler.TabIndex = 5;
             this.cmbTurler.UseSelectable = true;
+            this.cmbTurler.SelectedIndexChanged += new System.EventHandler(this.cmbTurler_SelectedIndexChanged);
             // 
             // KutuphaneForm
             // 
