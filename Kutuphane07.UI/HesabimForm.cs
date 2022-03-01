@@ -15,12 +15,15 @@ namespace Kutuphane07.UI
     public partial class HesabimForm : MetroForm
     {
         private readonly Kullanici kullanici;
+        private readonly KutuphaneYoneticisi kutuphaneYoneticisi;
 
-        public HesabimForm(Kullanici kullanici)
+        public HesabimForm(Kullanici kullanici, KutuphaneYoneticisi kutuphaneYoneticisi)
         {
             InitializeComponent();
             this.kullanici = kullanici;
+            this.kutuphaneYoneticisi = kutuphaneYoneticisi;
             KullaniciBilgiDoldur();
+            Listele();
         }
 
         private void KullaniciBilgiDoldur()
@@ -29,6 +32,11 @@ namespace Kutuphane07.UI
             lblAdSoyad.Text += $"\r\n{kullanici.AdSoyad}";
             lblKullaniciAdi.Text += $"\r\n{kullanici.KullaniciAdi}";
             lblParola.Text += $"\r\n{kullanici.Parola}";
+        }
+
+        private void Listele()
+        {
+            dgvKitaplar.DataSource = null;
             dgvKitaplar.DataSource = kullanici.OduncAlinanKitaplar != null ? kullanici.OduncAlinanKitaplar : null;
             dgvKitaplar.Columns[0].Visible = false;
             dgvKitaplar.Columns[1].HeaderText = "Kitap Adı";
@@ -42,7 +50,12 @@ namespace Kutuphane07.UI
 
         private void btnTeslimEt_Click(object sender, EventArgs e)
         {
-            //TODO seçili kitabın odunc alinma tarihini null yapıcaz ve kullanıcının kitaplarından silicez.
+            if (dgvKitaplar.SelectedRows.Count > 0)
+            {
+                Guid kitapId = ((Kitap)dgvKitaplar.SelectedRows[0].DataBoundItem).Id;
+                kutuphaneYoneticisi.KitapTeslimEt(kullanici, kitapId);
+                Listele();
+            }
         }
     }
 }

@@ -126,7 +126,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(6, 326);
+            this.metroLabel1.Location = new System.Drawing.Point(6, 336);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(107, 19);
             this.metroLabel1.TabIndex = 1;
