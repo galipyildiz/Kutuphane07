@@ -36,7 +36,15 @@ namespace Kutuphane07.DATA
         public List<Kitap> Kitaplar { get; set; }
         public void KitapBagisYap(string ad, DateTime basimTarihi, KitapTurEnum kitapTur, string yazarAd, int sayfaSayisi, string aciklama)
         {
-
+            Kitaplar.Add(new Kitap()
+            {
+                 Ad = ad,
+                 Aciklama = aciklama,
+                 BasimTarihi = basimTarihi,
+                 KitapTur = kitapTur,
+                 SayfaSayisi = sayfaSayisi,
+                 YazarAd = yazarAd
+            });
         }
         public void KitapImhaEt(Guid kitapId)
         {

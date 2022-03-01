@@ -75,7 +75,12 @@ namespace Kutuphane07.UI
 
         private void tsmiBagisYap_Click(object sender, EventArgs e)
         {
-            //TODO bagisyap form aç
+            BagisYapForm bagisYapForm = new BagisYapForm(kutuphaneYoneticisi);
+            DialogResult dr = bagisYapForm.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                Listele();
+            }
         }
 
         private void tsmiHesabim_Click(object sender, EventArgs e)
@@ -92,6 +97,7 @@ namespace Kutuphane07.UI
         private void tsmiKitapImhaEt_Click(object sender, EventArgs e)
         {
             //TODO kitap imha etme işlemleri
+            MessageBox.Show(((Kitap)dgvKitaplar.SelectedRows[0].DataBoundItem).Ad);
         }
 
         private void KutuphaneForm_FormClosing(object sender, FormClosingEventArgs e)
