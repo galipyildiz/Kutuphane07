@@ -34,17 +34,17 @@
     - Register ve login işlemleri methodlar kullanılarak
     - Login başarılıysa KutuphaneForm acilsin. 
     - LoginForm açılır ve kapanırken Kullanıcıyoneticisini serialize ve deserialize ediniz.
-- [ ] KutuphaneForm
+- [X] KutuphaneForm
     - KutuphaneForm açılır ve kapanırken kutuphaneyoneticisi serialize ve deserialize edilir.
     - Kutuphaneform'da menustripdeki butonlara tıklandığında ilgili formların açılması.
     - Çıkış yap özelliği 
     - Context menu strip kullanılarak kitap imha et ve kitap ödünç al özelliklerinin eklenmesi.
     - txt arama ve combobox turlerdeki seçim ve text değiştiğinde datagridviewde ilgili kitapların listelenmesi.
-- [ ] HesabımForm
+- [X] HesabımForm
     - HesabımSayfasında giriş yapan kullanıcı bilgileri gösterilir.
-- [ ] BagisYap Form
+- [X] BagisYap Form
     - BagisYap fromda ilgili kitap bilgileri alınarak bir kitap kutuphanedeki kitaplara eklenir.
-- [ ] Çıkış Yap  Butonu
+- [X] Çıkış Yap  Butonu
     - Kutuphane formu kapatarak loginforma geri döner ve başka bir kullanıcı ile giriş yapma imkanı sağlar.
 - [ ] Ekstra Görev:
     - Kullanıcının ödünç aldığı kitabın teslim süresi geçtiğinde nasıl bir sistem tasaralayabiliriz?
