@@ -57,5 +57,14 @@ namespace Kutuphane07.UI
                 Listele();
             }
         }
+
+        private void dgvKitaplar_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvKitaplar.SelectedRows.Count > 0)
+            {
+                Kitap kitap = ((Kitap)dgvKitaplar.SelectedRows[0].DataBoundItem);
+                dtpSonTeslimTarihi.Value = ((DateTime)kitap.OduncAlinmaTarihi).AddDays(14);
+            }
+        }
     }
 }

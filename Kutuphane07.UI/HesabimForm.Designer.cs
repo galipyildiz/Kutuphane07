@@ -134,15 +134,19 @@
             // 
             // dgvKitaplar
             // 
+            this.dgvKitaplar.AllowUserToAddRows = false;
+            this.dgvKitaplar.AllowUserToDeleteRows = false;
             this.dgvKitaplar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKitaplar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvKitaplar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKitaplar.Location = new System.Drawing.Point(6, 24);
             this.dgvKitaplar.Name = "dgvKitaplar";
+            this.dgvKitaplar.ReadOnly = true;
             this.dgvKitaplar.RowHeadersVisible = false;
             this.dgvKitaplar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKitaplar.Size = new System.Drawing.Size(377, 295);
             this.dgvKitaplar.TabIndex = 0;
+            this.dgvKitaplar.SelectionChanged += new System.EventHandler(this.dgvKitaplar_SelectionChanged);
             // 
             // HesabimForm
             // 
