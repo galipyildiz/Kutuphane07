@@ -82,6 +82,7 @@ namespace Kutuphane07.UI
             }
             else if (cmbTurler.SelectedIndex != 0)
             {
+                //tür kriteri geçerli
                 dgvKitaplar.DataSource = kutuphaneYoneticisi.Kitaplar
                     .Where(x => x.KitapTur == (KitapTurEnum)cmbTurler.SelectedItem)
                     .ToList();
